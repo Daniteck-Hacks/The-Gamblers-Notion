@@ -1,5 +1,5 @@
 const apiKey = 'AIzaSyAwTN162IXk1fl-K-ubjL8-KrSYr3r-6nU'; // Replace with your Gemini API key
-const endpoint = 'https://api.gemini.com/v1/completions'; // Gemini API endpoint
+const endpoint = 'https://generativelanguage.googleapis.com'; // Gemini API endpoint
 
 // Handles AI task breakdown
 async function getTaskBreakdown(task, difficulty) {
