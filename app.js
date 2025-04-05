@@ -1,6 +1,6 @@
 import { GoogleGenAI } from "@google/genai";
 
-const ai = new GoogleGenAI({ apiKey: "YOUR_API_KEY" }); // Replace with your actual API key
+const ai = new GoogleGenAI({ apiKey: "AIzaSyAwTN162IXk1fl-K-ubjL8-KrSYr3r-6nU" }); // Replace with your actual API key
 
 async function generateTaskBreakdown(taskDescription, difficultyLevel) {
   try {
@@ -17,10 +17,6 @@ async function generateTaskBreakdown(taskDescription, difficultyLevel) {
     return "Error generating task breakdown.";
   }
 }
-
-// Example usage:
-const taskDescription = "Complete the website design and code.";
-const difficultyLevel = "medium";  // Or "easy", "hard"
 
 generateTaskBreakdown(taskDescription, difficultyLevel);
 
