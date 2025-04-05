@@ -1,6 +1,29 @@
-const apiKey = 'AIzaSyAwTN162IXk1fl-K-ubjL8-KrSYr3r-6nU'; // Replace with your Gemini API key
-const endpoint = 'https://generativelanguage.googleapis.com'; // Gemini API endpoint
+import { GoogleGenAI } from "@google/genai";
 
+const ai = new GoogleGenAI({ apiKey: "YOUR_API_KEY" }); // Replace with your actual API key
+
+async function generateTaskBreakdown(taskDescription, difficultyLevel) {
+  try {
+    const response = await ai.models.generateContent({
+      model: "gemini-2.0-flash", // Ensure this model name is correct based on your needs
+      contents: `Break down the following task into smaller steps based on the difficulty level (${difficultyLevel}):
+                 ${taskDescription}`,
+    });
+
+    console.log("Generated Task Breakdown:", response.text);
+    return response.text;  // Return the text response from Gemini (task breakdown)
+  } catch (error) {
+    console.error("Error generating content:", error);
+    return "Error generating task breakdown.";
+  }
+}
+
+// Example usage:
+const taskDescription = "Complete the website design and code.";
+const difficultyLevel = "medium";  // Or "easy", "hard"
+
+generateTaskBreakdown(taskDescription, difficultyLevel);
+/*
 // Handles AI task breakdown
 async function getTaskBreakdown(task, difficulty) {
   const prompt = `Break down the following task into smaller tasks based on the difficulty level: 
@@ -115,5 +138,5 @@ document.getElementById('tasksContainer').addEventListener('click', (event) => {
   }
 });
 
-
+*/
 
