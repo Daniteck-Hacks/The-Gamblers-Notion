@@ -1,5 +1,5 @@
-const apiKey = 'YOUR_OPENAI_API_KEY'; // Replace with your OpenAI API key
-const endpoint = 'https://api.openai.com/v1/completions'; // OpenAI API endpoint
+const apiKey = 'AIzaSyAwTN162IXk1fl-K-ubjL8-KrSYr3r-6nU'; // Replace with your Gemini API key
+const endpoint = 'https://api.gemini.com/v1/completions'; // Gemini API endpoint
 
 // Handles AI task breakdown
 async function getTaskBreakdown(task, difficulty) {
@@ -15,7 +15,7 @@ async function getTaskBreakdown(task, difficulty) {
       'Authorization': `Bearer ${apiKey}`
     },
     body: JSON.stringify({
-      model: 'text-davinci-003', // or other GPT models if you prefer
+      model: 'gemini-001', // or other GPT models if you prefer
       prompt: prompt,
       max_tokens: 500,
     })
