@@ -1,4 +1,3 @@
-<script>
   const endpoint = "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent";
   const apiKey = "AIzaSyAwTN162IXk1fl-K-ubjL8-KrSYr3r-6nU"; // Keep private in production
 
@@ -45,7 +44,6 @@
       }
     });
   });
-</script>
 
 
 
