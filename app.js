@@ -23,7 +23,7 @@ const taskDescription = "Complete the website design and code.";
 const difficultyLevel = "medium";  // Or "easy", "hard"
 
 generateTaskBreakdown(taskDescription, difficultyLevel);
-/*
+
 // Handles AI task breakdown
 async function getTaskBreakdown(task, difficulty) {
   const prompt = `Break down the following task into smaller tasks based on the difficulty level: 
@@ -138,5 +138,5 @@ document.getElementById('tasksContainer').addEventListener('click', (event) => {
   }
 });
 
-*/
+
 
