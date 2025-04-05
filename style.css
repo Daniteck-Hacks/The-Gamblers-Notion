@@ -1,1 +1,29 @@
-
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background: #f5f5f5;
+}
+.container {
+  max-width: 600px;
+  margin: auto;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+input, select, button {
+  padding: 10px;
+  margin: 5px 0;
+  width: 100%;
+}
+.task {
+  margin-top: 10px;
+  padding: 8px;
+  background: #d8eafd;
+  border-radius: 6px;
+  cursor: pointer;
+}
+#pomodoroTimer {
+  margin-top: 15px;
+  font-weight: bold;
+}
