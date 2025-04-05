@@ -1,4 +1,4 @@
-  const endpoint = "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent";
+/*  const endpoint = "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent";
   const apiKey = "AIzaSyAwTN162IXk1fl-K-ubjL8-KrSYr3r-6nU"; // Keep private in production
 
   async function getTaskBreakdown(task, difficulty) {
@@ -46,4 +46,55 @@
   });
 
 
+*/
+import { GoogleGenAI } from "@google/genai";
+
+// Setup Gemini API
+const ai = new GoogleGenAI({ apiKey: "AIzaSyAwTN162IXk1fl-K-ubjL8-KrSYr3r-6nU" }); // replace with your real API key
+
+// Function to get task breakdown
+async function generateTaskBreakdown(taskDescription, difficultyLevel) {
+  try {
+    const model = await ai.getGenerativeModel({ model: "gemini-1.5-flash" });
+    const prompt = `Break down the following task into smaller tasks based on the difficulty level: 
+    Task: ${taskDescription}
+    Difficulty: ${difficultyLevel}
+    Please list each step clearly with suggested time to complete.`;
+
+    const result = await model.generateContent({
+      contents: [{ role: "user", parts: [prompt] }],
+    });
+
+    const response = await result.response;
+    const text = await response.text();
+    return text;
+  } catch (error) {
+    console.error("Error generating breakdown:", error);
+    return "Error generating task breakdown.";
+  }
+}
+
+// Handle button click
+document.getElementById("generateBtn").addEventListener("click", async () => {
+  const task = document.getElementById("taskInput").value;
+  const difficulty = document.getElementById("difficulty").value;
+
+  if (!task || !difficulty) {
+    alert("Please enter a task and select a difficulty level.");
+    return;
+  }
+
+  const breakdown = await generateTaskBreakdown(task, difficulty);
+  const container = document.getElementById("tasksContainer");
+  container.innerHTML = ""; // Clear old tasks
+
+  breakdown.split("\n").forEach((line) => {
+    if (line.trim()) {
+      const p = document.createElement("p");
+      p.classList.add("task");
+      p.innerText = line.trim();
+      container.appendChild(p);
+    }
+  });
+});
 
