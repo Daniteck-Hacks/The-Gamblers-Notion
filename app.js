@@ -31,10 +31,10 @@ async function getTaskBreakdown(task, difficulty) {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': `Bearer ${apiKey}`
+      'Authorization': `Bearer ${ai}`
     },
     body: JSON.stringify({
-      model: 'gemini-2.5-pro-preview-03-25', // or other GPT models if you prefer
+      model: 'gemini-2.0-flash', // or other GPT models if you prefer
       prompt: prompt,
       max_tokens: 500,
     })
