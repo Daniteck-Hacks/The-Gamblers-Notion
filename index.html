@@ -1,3 +1,4 @@
+<!--
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +12,7 @@
   <div id="app">
     <h1>The Gambler's Notion</h1>
 
-    <!-- Google Sign-In -->
+    <!-- Google Sign-In 
     <div id="g_id_onload"
          data-client_id="512203285287-4pldqvkivlvolir0esdkm5dtgss21hf6.apps.googleusercontent.com"
          data-callback="handleCredentialResponse"
@@ -19,7 +20,7 @@
     </div>
     <div class="g_id_signin" data-type="standard"></div>
 
-    <!-- Hidden until signed in -->
+    <!-- Hidden until signed in 
     <div id="main-content" style="display:none;">
 
       <label for="taskInput">What's your big task?</label>
@@ -83,7 +84,7 @@
     });
   });
 </script>
-      <div id="pomodoroTimer"></div> <!-- This will be populated later -->
+      <div id="pomodoroTimer"></div> <!-- This will be populated later 
     </div>
   </div>
 
@@ -98,4 +99,30 @@
   <script src="app.js"></script>
 </body>
 </html>
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Productivity App</title>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Break It Down</h1>
+    <input type="text" id="taskInput" placeholder="Enter a task..." />
+    <select id="difficulty">
+      <option value="">Select difficulty</option>
+      <option value="easy">Easy</option>
+      <option value="medium">Medium</option>
+      <option value="hard">Hard</option>
+    </select>
+    <button id="generateBtn">Break it down</button>
+    <div id="tasksContainer"></div>
+  </div>
 
+  <script type="module" src="app.js"></script>
+  <script src="pomodoro.js"></script>
+</body>
+</html>
