@@ -48,6 +48,7 @@ async function getTaskBreakdown(task, difficulty) {
 document.getElementById('generateBtn').addEventListener('click', async () => {
   const task = document.getElementById('taskInput').value;
   const difficulty = document.getElementById('difficulty').value;
+  console.log("Button clicked. Task:", task, "Difficulty:", difficulty);
 
   if (task && difficulty) {
     const breakdown = await getTaskBreakdown(task, difficulty);
