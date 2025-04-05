@@ -1,1 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Gambler's Notion</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+  <div id="app">
+    <h1>🚀 Break Big Tasks into Tiny Wins</h1>
+
+    <!-- Google Sign-In -->
+    <div id="g_id_onload"
+         data-client_id="YOUR_GOOGLE_CLIENT_ID"
+         data-callback="handleCredentialResponse"
+         data-auto_prompt="false">
+    </div>
+    <div class="g_id_signin" data-type="standard"></div>
+
+    <!-- Hidden until signed in -->
+    <div id="main-content" style="display:none;">
+
+      <label for="taskInput">What's your big task?</label>
+      <textarea id="taskInput" rows="3" placeholder="e.g. Write a research paper"></textarea>
+
+      <label for="difficulty">Choose a difficulty level:</label>
+      <select id="difficulty">
+        <option value="easy">Easy 🐢</option>
+        <option value="medium">Medium 🚶‍♂️</option>
+        <option value="hard">Hard 🏃‍♂️</option>
+      </select>
+
+      <button id="generateBtn">Break It Down</button>
+
+      <div id="tasksContainer"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+  <script>
+    function handleCredentialResponse(response) {
+      console.log("Google login response:", response.credential);
+      document.getElementById("main-content").style.display = "block";
+    }
+  </script>
+</body>
+</html>
 
